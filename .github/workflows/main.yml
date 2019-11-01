@@ -14,4 +14,4 @@ jobs:
       uses: naveego/setup-bosun@master
 
     - name: bosun version
-      run: bosun version
+      run: bosun --version
