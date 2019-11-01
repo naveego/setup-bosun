@@ -57,5 +57,7 @@ export async function downloadBosun(): Promise<string> {
 
 function getBosunFileName(): string {
   const fileArch = (osArch === 'x64') ? "amd64" : "386";
-  return `/1.19.0/bosun_1.19.0_${osPlat}_${fileArch}.tar.gz`
+  let fileOS = (osPlat === 'win32') ? 'windows' : osPlat;
+
+  return `/1.19.0/bosun_1.19.0_${fileOS}_${fileArch}.tar.gz`
 }
