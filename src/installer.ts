@@ -26,8 +26,7 @@ if (!tempDirectory) {
 
 export async function downloadBosun(): Promise<string> {
     let downloadBase = "https://github.com/naveego/bosun/releases/download";
-    let target = `/1.19.0/bosun_1.19.0_${osPlat}_${osArch}.tar.gz`
-    let packageUrl = downloadBase + target;
+    let packageUrl = downloadBase + getBosunFileName();
     let downloadPath: string | null = null;
 
     try {
@@ -36,7 +35,7 @@ export async function downloadBosun(): Promise<string> {
     catch(error) {
         core.debug(error);
 
-        throw `Failed to download ${target}: ${error}`;
+        throw `Failed to download ${packageUrl}: ${error}`;
     }
 
     //
@@ -47,8 +46,16 @@ export async function downloadBosun(): Promise<string> {
         throw new Error('Temp directory not set');
     }
 
+    console.log(downloadPath);
     extPath = await tc.extractTar(downloadPath);
 
-    const toolRoot = path.join(extPath, 'bosun');
-    return await tc.cacheDir(toolRoot, 'bosun', '1.19.0');
+    let toolPath = await tc.cacheDir(extPath, 'bosun', '1.19.0');
+    core.addPath(toolPath);
+
+    return toolPath;
+}
+
+function getBosunFileName(): string {
+  const fileArch = (osArch === 'x64') ? "amd64" : "386";
+  return `/1.19.0/bosun_1.19.0_${osPlat}_${fileArch}.tar.gz`
 }

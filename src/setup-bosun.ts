@@ -7,6 +7,8 @@ async function run() {
 
     var bosunFile = await installer.downloadBosun();
 
+    
+
     console.log(`Downloaded Bosun: ${bosunFile}`);
   
   } catch (error) {

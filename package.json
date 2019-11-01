@@ -5,7 +5,7 @@
   "main": "lib/setup-bosun.js",
   "scripts": {
     "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -19,11 +19,14 @@
   "homepage": "https://github.com/naveego/setup-bosun#readme",
   "dependencies": {
     "@actions/core": "^1.2.0",
+    "@actions/io": "^1.0.1",
     "@actions/tool-cache": "^1.1.2",
     "@types/node": "^12.12.3"
   },
   "devDependencies": {
+    "@types/jest": "^24.0.21",
     "jest": "^24.9.0",
+    "jest-circus": "^24.9.0",
     "ts-jest": "^24.1.0",
     "typescript": "^3.6.4"
   }
