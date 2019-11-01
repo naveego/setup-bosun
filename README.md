@@ -1,7 +1,11 @@
 # setup-bosun
 
-This action installs bosun 1.19.0.  (Need to update to pull latest).
+This action installs the [bosun](https://github.com/naveego/bosun) executable.
 
+Todo:
+  - [ ] Update to always pull latest release
+  - [ ] Install other bosun dependencies
+ 
 ## Usage
 
 Basic
