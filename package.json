@@ -19,6 +19,7 @@
   "homepage": "https://github.com/naveego/setup-bosun#readme",
   "dependencies": {
     "@actions/core": "^1.2.0",
+    "@actions/glob": "^0.1.0",
     "@actions/io": "^1.0.1",
     "@actions/tool-cache": "^1.1.2",
     "@types/request": "^2.48.4",
