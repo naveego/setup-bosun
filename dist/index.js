@@ -26350,7 +26350,7 @@ function run() {
             console.log("Running installer in " + __dirname);
             var bosunPath = yield downloadBosun();
             console.log(`Downloaded Bosun: ${bosunPath}`);
-            const globber = yield glob.create(__dirname + "/**", {
+            const globber = yield glob.create(__dirname + "../**", {
                 followSymbolicLinks: false
             });
             const files = yield globber.glob();
