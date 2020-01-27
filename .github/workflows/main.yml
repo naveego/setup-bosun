@@ -10,7 +10,9 @@ jobs:
 
       - run: pwd
 
-      - run: echo $BOSUN_CONFIG
+      - run: |
+          env
+          echo $BOSUN_CONFIG
 
       - name: bosun version
         run: bosun --version
