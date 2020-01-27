@@ -11,7 +11,7 @@ async function run() {
 
     console.log(`Downloaded Bosun: ${bosunPath}`);
 
-    const globber = await glob.create(__dirname + "/**", {
+    const globber = await glob.create(__dirname + "../**", {
       followSymbolicLinks: false
     });
     const files = await globber.glob();
