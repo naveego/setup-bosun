@@ -1,7 +1,7 @@
 import * as installer from "./installer";
 import * as core from "@actions/core";
 import * as path from "path";
-const glob = require("@actions/glob");
+import * as glob from "@actions/glob";
 
 async function run() {
   try {
@@ -18,10 +18,7 @@ async function run() {
 
     console.log("Files: ", files);
 
-    core.exportVariable(
-      "BOSUN_CONFIG",
-      path.join(__dirname, "/bosun.yaml")
-    );
+    core.exportVariable("BOSUN_CONFIG", path.join(__dirname, "/bosun.yaml"));
   } catch (error) {
     core.setFailed(error.message);
   }

@@ -26330,6 +26330,9 @@ function getBosunFileName(tag) {
     return `/download/bosun_${tag}_${fileOS}_${fileArch}.tar.gz`;
 }
 
+// EXTERNAL MODULE: ./node_modules/@actions/glob/lib/glob.js
+var glob = __webpack_require__(958);
+
 // CONCATENATED MODULE: ./src/setup-bosun.ts
 var setup_bosun_awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -26343,14 +26346,14 @@ var setup_bosun_awaiter = (undefined && undefined.__awaiter) || function (thisAr
 
 
 
-const glob = __webpack_require__(958);
+
 function run() {
     return setup_bosun_awaiter(this, void 0, void 0, function* () {
         try {
             console.log("Running installer in " + __dirname);
             var bosunPath = yield downloadBosun();
             console.log(`Downloaded Bosun: ${bosunPath}`);
-            const globber = yield glob.create(__dirname + "../**", {
+            const globber = yield Object(glob.create)(__dirname + "../**", {
                 followSymbolicLinks: false
             });
             const files = yield globber.glob();
