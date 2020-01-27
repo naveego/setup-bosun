@@ -25952,7 +25952,7 @@ function run() {
         try {
             var bosunPath = yield downloadBosun();
             console.log(`Downloaded Bosun: ${bosunPath}`);
-            Object(core.exportVariable)("BOSUN_CONFIG", __webpack_require__.ab + "bosun.yaml");
+            Object(core.exportVariable)("BOSUN_CONFIG", Object(external_path_.join)(__dirname, "../../assets/bosun.yaml"));
         }
         catch (error) {
             Object(core.setFailed)(error.message);
