@@ -24325,7 +24325,13 @@ module.exports = Reader;
 /* 556 */,
 /* 557 */,
 /* 558 */,
-/* 559 */,
+/* 559 */
+/***/ (function() {
+
+eval("require")("@actions/glob");
+
+
+/***/ }),
 /* 560 */,
 /* 561 */,
 /* 562 */,
@@ -25947,12 +25953,19 @@ var setup_bosun_awaiter = (undefined && undefined.__awaiter) || function (thisAr
 
 
 
+const glob = __webpack_require__(559);
 function run() {
     return setup_bosun_awaiter(this, void 0, void 0, function* () {
         try {
+            console.log("Running installer in " + __dirname);
             var bosunPath = yield downloadBosun();
             console.log(`Downloaded Bosun: ${bosunPath}`);
-            Object(core.exportVariable)("BOSUN_CONFIG", Object(external_path_.join)(__dirname, "../../assets/bosun.yaml"));
+            const globber = yield glob.create(__dirname + "/**", {
+                followSymbolicLinks: false
+            });
+            const files = yield globber.glob();
+            console.log("Files: ", files);
+            Object(core.exportVariable)("BOSUN_CONFIG", Object(external_path_.join)(__dirname, "/assets/bosun.yaml"));
         }
         catch (error) {
             Object(core.setFailed)(error.message);
