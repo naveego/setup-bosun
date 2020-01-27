@@ -1,6 +1,6 @@
-name: 'Setup Bosun environment'
-description: 'Setup a Bosun environment and add it to the PATH'
-author: 'Naveego'
+name: "Setup Bosun environment"
+description: "Setup a Bosun environment and add it to the PATH"
+author: "Naveego"
 runs:
-  using: 'node12'
-  main: 'lib/setup-bosun.js'
+  using: "node12"
+  main: "dist/index.js"

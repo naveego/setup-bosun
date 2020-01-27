@@ -1,4 +1,3 @@
-  
 name: Main workflow
 on: [push]
 jobs:
@@ -6,9 +5,8 @@ jobs:
     name: Run
     runs-on: ubuntu-latest
     steps:
+      - name: Setup Bosun
+        uses: naveego/setup-bosun@master
 
-    - name: Setup Bosun
-      uses: naveego/setup-bosun@master
-
-    - name: bosun version
-      run: bosun --version
+      - name: bosun version
+        run: bosun --version
