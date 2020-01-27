@@ -8,8 +8,8 @@ jobs:
       - name: Setup Bosun
         uses: naveego/setup-bosun@master
 
-      - run: |
-          echo $BOSUN_CONFIG
+      - run: echo $BOSUN_CONFIG
+      - run: cat $BOSUN_CONFIG
       - run: bosun ws show imports
 
       - name: bosun version
