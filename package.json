@@ -2,9 +2,9 @@
   "name": "setup-bosun",
   "version": "1.0.0",
   "description": "A github action for setting up bosun",
-  "main": "lib/setup-bosun.js",
+  "main": "dist/index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "ncc build src/setup-bosun.ts",
     "test": "jest"
   },
   "repository": {
@@ -32,6 +32,7 @@
     "jest": "^24.9.0",
     "jest-circus": "^24.9.0",
     "ts-jest": "^24.1.0",
-    "typescript": "^3.6.4"
+    "typescript": "^3.6.4",
+    "zeit/ncc": "0.20.5"
   }
 }
