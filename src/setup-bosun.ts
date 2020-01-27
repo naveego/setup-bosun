@@ -1,16 +1,13 @@
-
-import * as installer from './installer';
-import * as core from '@actions/core';
+import * as installer from "./installer";
+import * as core from "@actions/core";
 
 async function run() {
   try {
+    var bosunPath = await installer.downloadBosun();
 
-    var bosunFile = await installer.downloadBosun();
+    console.log(`Downloaded Bosun: ${bosunPath}`);
 
-    
-
-    console.log(`Downloaded Bosun: ${bosunFile}`);
-  
+    core.exportVariable("BOSUN_CONFIG", "../assets/bosun.yaml");
   } catch (error) {
     core.setFailed(error.message);
   }
