@@ -25946,11 +25946,13 @@ var setup_bosun_awaiter = (undefined && undefined.__awaiter) || function (thisAr
 };
 
 
+
 function run() {
     return setup_bosun_awaiter(this, void 0, void 0, function* () {
         try {
-            var bosunFile = yield downloadBosun();
-            console.log(`Downloaded Bosun: ${bosunFile}`);
+            var bosunPath = yield downloadBosun();
+            console.log(`Downloaded Bosun: ${bosunPath}`);
+            Object(core.exportVariable)("BOSUN_CONFIG", Object(external_path_.join)(__dirname, "/assets/bosun.yaml"));
         }
         catch (error) {
             Object(core.setFailed)(error.message);
