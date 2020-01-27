@@ -26355,7 +26355,7 @@ function run() {
             });
             const files = yield globber.glob();
             console.log("Files: ", files);
-            Object(core.exportVariable)("BOSUN_CONFIG", Object(external_path_.join)(__dirname, "/assets/bosun.yaml"));
+            Object(core.exportVariable)("BOSUN_CONFIG", Object(external_path_.join)(__dirname, "/bosun.yaml"));
         }
         catch (error) {
             Object(core.setFailed)(error.message);

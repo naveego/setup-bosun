@@ -20,7 +20,7 @@ async function run() {
 
     core.exportVariable(
       "BOSUN_CONFIG",
-      path.join(__dirname, "/assets/bosun.yaml")
+      path.join(__dirname, "/bosun.yaml")
     );
   } catch (error) {
     core.setFailed(error.message);
