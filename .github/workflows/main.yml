@@ -10,6 +10,7 @@ jobs:
 
       - run: echo $BOSUN_CONFIG
       - run: cat $BOSUN_CONFIG
+      - run: bosun platform list
       - run: bosun ws show imports
 
       - name: bosun version
