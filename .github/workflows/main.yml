@@ -13,6 +13,7 @@ jobs:
       - run: |
           env
           echo $BOSUN_CONFIG
+      - run: bosun ws show imports
 
       - name: bosun version
         run: bosun --version
