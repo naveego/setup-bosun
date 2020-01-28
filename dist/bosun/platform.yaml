@@ -9,9 +9,7 @@ platforms:
     releaseDirectory: releases
     appConfigDirectory: apps
     environmentPaths:
-      - ./environment.yaml
+      - ./environments/github.yaml
     environmentRoles:
       - name: local
-        description:
-          Assigned to environment which defines the local development environment.
-          All services scaled down to minimum. No security needs to be applied.
+        description: Environment for builds in github actions.

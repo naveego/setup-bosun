@@ -1,4 +1,4 @@
 currentEnvironment: github
 currentPlatform: naveego
-include:
+imports:
   - ./platform.yaml

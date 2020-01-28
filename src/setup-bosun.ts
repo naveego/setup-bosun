@@ -11,14 +11,17 @@ async function run() {
 
     console.log(`Downloaded Bosun: ${bosunPath}`);
 
-    const globber = await glob.create(__dirname + "../**", {
+    const globber = await glob.create(path.join(__dirname, "/../../**"), {
       followSymbolicLinks: false
     });
     const files = await globber.glob();
 
     console.log("Files: ", files);
 
-    core.exportVariable("BOSUN_CONFIG", path.join(__dirname, "/bosun.yaml"));
+    core.exportVariable(
+      "BOSUN_CONFIG",
+      path.join(__dirname, "/bosun/bosun.yaml")
+    );
   } catch (error) {
     core.setFailed(error.message);
   }

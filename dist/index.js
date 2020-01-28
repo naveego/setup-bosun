@@ -26353,12 +26353,12 @@ function run() {
             console.log("Running installer in " + __dirname);
             var bosunPath = yield downloadBosun();
             console.log(`Downloaded Bosun: ${bosunPath}`);
-            const globber = yield Object(glob.create)(__dirname + "../**", {
+            const globber = yield Object(glob.create)(Object(external_path_.join)(__dirname, "/../../**"), {
                 followSymbolicLinks: false
             });
             const files = yield globber.glob();
             console.log("Files: ", files);
-            Object(core.exportVariable)("BOSUN_CONFIG", Object(external_path_.join)(__dirname, "/bosun.yaml"));
+            Object(core.exportVariable)("BOSUN_CONFIG", Object(external_path_.join)(__dirname, "/bosun/bosun.yaml"));
         }
         catch (error) {
             Object(core.setFailed)(error.message);
